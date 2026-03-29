@@ -10,7 +10,16 @@ st.set_page_config(page_title="Accident Risk Prediction", layout="wide")
 # =========================
 # LOAD MODEL
 # =========================
-model = pickle.load(open("risk_prediction_model.pkl", "rb"))
+import gdown
+import os
+
+MODEL_PATH = "risk_prediction_model.pkl"
+
+if not os.path.exists(MODEL_PATH):
+    url = "https://drive.google.com/uc?id=1tttbxBg_JKuuZTKowXHIuvAyZxTjKONW"
+    gdown.download(url, MODEL_PATH, quiet=False)
+
+model=pickle.load(open(MODEL_PATH, "rb"))
 
 # =========================
 # LOAD & FIX TABLES
