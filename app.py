@@ -20,6 +20,10 @@ if not os.path.exists(MODEL_PATH):
     gdown.download(url, MODEL_PATH, quiet=False)
 
 model=pickle.load(open(MODEL_PATH, "rb"))
+@st.cache_data
+def load_model():
+    return model
+model = load_model()
 
 # =========================
 # LOAD & FIX TABLES
@@ -110,8 +114,13 @@ using machine learning techniques applied to real-world data.
 elif page == "Data Analysis Dashboard":
 
     st.title("📊 Data Analysis Dashboard")
-    url="https://drive.google.com/uc?id=1LdXREveLbsn1GO2h8W4T7lL2XGH_rkG7"
+    url="https://drive.google.com/uc?export=download&id=1LdXREveLbsn1GO2h8W4T7lL2XGH_rkG7"
     df = pd.read_csv(url)
+
+    @st.cache_data
+    def load_data():
+        url = "https://drive.google.com/file/d/1LdXREveLbsn1GO2h8W4T7lL2XGH_rkG7/view?usp=drivesdk"
+        return pd.read_csv(url)
 
     # Correlation
     st.subheader("Correlation Heatmap")
