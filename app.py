@@ -110,8 +110,8 @@ using machine learning techniques applied to real-world data.
 elif page == "Data Analysis Dashboard":
 
     st.title("📊 Data Analysis Dashboard")
-
-    df = pd.read_csv("US_Accidents_Cleaned.csv")
+    url="https://drive.google.com/uc?id=1LdXREveLbsn1GO2h8W4T7lL2XGH_rkG7"
+    df = pd.read_csv(url)
 
     # Correlation
     st.subheader("Correlation Heatmap")
