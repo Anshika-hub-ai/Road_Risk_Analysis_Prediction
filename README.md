@@ -99,13 +99,13 @@ streamlit run app.py
 
 ## 📸 Screenshots
 ### 🔹 Prediction UI
-![UI](Downloads/UI.png)
+![UI](Downloads\UI.png)
 
 ### 🔹 Result Output
-![Result](Downloads/result.png)
+![Result](Downloads\result.png)
 
 ### 🔹 Dashboard
-**![Graphs](Downloads/Dashboard.png)
+**![Graphs](Downloads\Dashboard.png)
 ---**
 
 ## ⚠️ Note
